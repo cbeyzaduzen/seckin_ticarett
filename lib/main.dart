@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
           length: 5,
           child: Scaffold(
             appBar: AppBar(
-              backgroundColor: Colors.yellow[300],
+              backgroundColor: Colors.yellow[400],
               bottom: TabBar(
                 tabs: [
                   Tab(
