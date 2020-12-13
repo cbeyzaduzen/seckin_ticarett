@@ -62,7 +62,7 @@ class _BuzdolabiPageState extends State<BuzdolabiPage> {
                               decoration: new BoxDecoration(
                                 boxShadow: [
                                   new BoxShadow(
-                                    color: Colors.blueGrey[300],
+                                    color: Colors.blueGrey[200],
                                     blurRadius: 5.0,
                                   ),
                                 ],
