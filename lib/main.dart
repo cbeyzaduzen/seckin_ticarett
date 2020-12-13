@@ -72,8 +72,8 @@ class MyApp extends StatelessWidget {
             body: TabBarView(
               children: [
                 BuzdolabiPage(),
-                CamasirPage(),
                 BulasikPage(),
+                CamasirPage(),
                 TvPage(),
                 KucukevaletPage(),
               ],

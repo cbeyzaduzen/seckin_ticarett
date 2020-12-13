@@ -1,6 +1,10 @@
+import 'dart:ui';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:loading_animations/loading_animations.dart';
+
+import 'detay.dart';
 
 class CamasirPage extends StatefulWidget {
   @override
@@ -11,7 +15,7 @@ class _CamasirPageState extends State<CamasirPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.amber,
+      backgroundColor: Colors.yellow[100],
       body: SafeArea(
         child: Container(
           child: StreamBuilder<QuerySnapshot>(
@@ -44,16 +48,43 @@ class _CamasirPageState extends State<CamasirPage> {
                               child: Card(
                                 child: Column(
                                   children: [
-                                    Text(products["baslik"]),
+                                    Text(
+                                      products["baslik"],
+                                      style: TextStyle(fontSize: 15),
+                                    ),
                                     Expanded(
                                       child: Image.network(
                                         products["foto"],
-                                        width: 200,
-                                        height: 200,
                                         fit: BoxFit.cover,
                                       ),
                                     ),
-                                    Text(products["fiyat"]),
+                                    Text(
+                                      products["fiyat"],
+                                      style: TextStyle(
+                                          backgroundColor: Colors.red[100],
+                                          fontSize: 15),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: SizedBox(
+                                        height: 25,
+                                        width: 100,
+                                        child: RaisedButton(
+                                          onPressed: () {
+                                            Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      DetayPage()),
+                                            );
+                                          },
+                                          child: const Text(
+                                            'OZELLIKLER',
+                                            style: TextStyle(fontSize: 10),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
                                   ],
                                 ),
                               ),

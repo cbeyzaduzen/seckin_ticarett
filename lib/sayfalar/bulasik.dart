@@ -2,6 +2,8 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:loading_animations/loading_animations.dart';
 
+import 'detay.dart';
+
 class BulasikPage extends StatefulWidget {
   @override
   _BulasikPageState createState() => _BulasikPageState();
@@ -11,7 +13,7 @@ class _BulasikPageState extends State<BulasikPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.amber,
+      backgroundColor: Colors.yellow[100],
       body: SafeArea(
         child: Container(
           child: StreamBuilder<QuerySnapshot>(
@@ -48,12 +50,24 @@ class _BulasikPageState extends State<BulasikPage> {
                                     Expanded(
                                       child: Image.network(
                                         products["foto"],
-                                        width: 200,
-                                        height: 200,
                                         fit: BoxFit.cover,
                                       ),
                                     ),
                                     Text(products["fiyat"]),
+                                    RaisedButton(
+                                      onPressed: () {
+                                        Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  DetayPage()),
+                                        );
+                                      },
+                                      child: const Text(
+                                        'OZELLIKLER',
+                                        style: TextStyle(fontSize: 10),
+                                      ),
+                                    ),
                                   ],
                                 ),
                               ),

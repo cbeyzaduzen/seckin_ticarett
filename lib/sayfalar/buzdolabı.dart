@@ -2,6 +2,8 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:loading_animations/loading_animations.dart';
 
+import 'detay.dart';
+
 class BuzdolabiPage extends StatefulWidget {
   @override
   _BuzdolabiPageState createState() => _BuzdolabiPageState();
@@ -11,7 +13,7 @@ class _BuzdolabiPageState extends State<BuzdolabiPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.amber,
+      backgroundColor: Colors.yellow[100],
       body: SafeArea(
         child: Container(
           child: StreamBuilder<QuerySnapshot>(
@@ -22,7 +24,7 @@ class _BuzdolabiPageState extends State<BuzdolabiPage> {
                 return !snapshot.hasData
                     //loading page is here
                     ? Scaffold(
-                        backgroundColor: Colors.amber,
+                        backgroundColor: Colors.white,
                         body: Container(
                           child: LoadingFlipping.circle(
                             borderColor: Colors.white,
@@ -49,12 +51,24 @@ class _BuzdolabiPageState extends State<BuzdolabiPage> {
                                     Expanded(
                                       child: Image.network(
                                         products["foto"],
-                                        width: 200,
-                                        height: 200,
                                         fit: BoxFit.cover,
                                       ),
                                     ),
                                     Text(products["fiyat"]),
+                                    RaisedButton(
+                                      onPressed: () {
+                                        Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  DetayPage()),
+                                        );
+                                      },
+                                      child: const Text(
+                                        'OZELLIKLER',
+                                        style: TextStyle(fontSize: 10),
+                                      ),
+                                    ),
                                   ],
                                 ),
                               ),
