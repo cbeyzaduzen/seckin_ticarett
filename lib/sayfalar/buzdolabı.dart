@@ -10,7 +10,6 @@ class BuzdolabiPage extends StatefulWidget {
 class _BuzdolabiPageState extends State<BuzdolabiPage> {
   @override
   Widget build(BuildContext context) {
-    final _size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: Colors.amber,
       body: SafeArea(
@@ -75,20 +74,5 @@ class _BuzdolabiPageState extends State<BuzdolabiPage> {
         ),
       ),
     );
-  }
-
-  //firebase e ekleme fonksiyonu
-  CollectionReference users =
-      FirebaseFirestore.instance.collection('kullanici');
-  void addUser() {
-    users
-        .add({
-          'full_name': "sero", // John Doe
-          'company': "sero", // Stokes and Sons
-          'age': 42 // 42
-        })
-        .then((value) => print(
-            "User Added")) //buradaki then eğerki add fonksiyonu başarılı olursa burası çalışacaktır
-        .catchError((error) => print("Failed to add user: $error"));
   }
 }

@@ -1,6 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:seckin_ticarett/my_flutter_app_icons.dart';
+import 'package:seckin_ticarett/icons.dart';
 import 'package:seckin_ticarett/sayfalar/bulasik.dart';
 import 'package:seckin_ticarett/sayfalar/buzdolab%C4%B1.dart';
 import 'package:seckin_ticarett/sayfalar/camasir.dart';
@@ -29,31 +29,31 @@ class MyApp extends StatelessWidget {
                 tabs: [
                   Tab(
                       icon: Icon(
-                    MyFlutterApp.fridge__1_,
+                    Semboller.fridge__1_,
                     color: Colors.indigo[900],
                     size: 40,
                   )),
                   Tab(
                       icon: Icon(
-                    MyFlutterApp.dishwasher,
+                    Semboller.dishwasher,
                     size: 40,
                     color: Colors.indigo[900],
                   )),
                   Tab(
                       icon: Icon(
-                    MyFlutterApp.washing_machine,
+                    Semboller.washing_machine,
                     color: Colors.indigo[900],
                     size: 40,
                   )),
                   Tab(
                       icon: Icon(
-                    MyFlutterApp.tv_screen,
+                    Semboller.tv_screen,
                     color: Colors.indigo[900],
                     size: 40,
                   )),
                   Tab(
                       icon: Icon(
-                    MyFlutterApp.toaster,
+                    Semboller.toaster,
                     color: Colors.indigo[900],
                     size: 30,
                   )),
@@ -75,7 +75,7 @@ class MyApp extends StatelessWidget {
                 CamasirPage(),
                 BulasikPage(),
                 TvPage(),
-                KucukEvAletPage(),
+                KucukevaletPage(),
               ],
             ),
           ),
