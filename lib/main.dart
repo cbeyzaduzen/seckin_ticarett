@@ -16,61 +16,65 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: DefaultTabController(
-        length: 5,
-        child: Scaffold(
-          appBar: AppBar(
-            backgroundColor: Colors.yellow[300],
-            bottom: TabBar(
-              tabs: [
-                Tab(
-                    icon: Icon(
-                  MyFlutterApp.fridge__1_,
-                  color: Colors.indigo[900],
-                  size: 40,
-                )),
-                Tab(
-                    icon: Icon(
-                  MyFlutterApp.dishwasher,
-                  size: 40,
-                  color: Colors.indigo[900],
-                )),
-                Tab(
-                    icon: Icon(
-                  MyFlutterApp.washing_machine,
-                  color: Colors.indigo[900],
-                  size: 40,
-                )),
-                Tab(
-                    icon: Icon(
-                  MyFlutterApp.tv_screen,
-                  color: Colors.indigo[900],
-                  size: 40,
-                )),
-                Tab(
-                    icon: Icon(
-                  MyFlutterApp.toaster,
-                  color: Colors.indigo[900],
-                  size: 30,
-                )),
-              ],
-            ),
-            title: Center(
-              child: Text(
-                'Seçkin Ticaret',
-                style: TextStyle(fontWeight: FontWeight.bold),
-                
+      home: SafeArea(
+        child: DefaultTabController(
+          length: 5,
+          child: Scaffold(
+            appBar: AppBar(
+              backgroundColor: Colors.yellow[300],
+              bottom: TabBar(
+                tabs: [
+                  Tab(
+                      icon: Icon(
+                    MyFlutterApp.fridge__1_,
+                    color: Colors.indigo[900],
+                    size: 40,
+                  )),
+                  Tab(
+                      icon: Icon(
+                    MyFlutterApp.dishwasher,
+                    size: 40,
+                    color: Colors.indigo[900],
+                  )),
+                  Tab(
+                      icon: Icon(
+                    MyFlutterApp.washing_machine,
+                    color: Colors.indigo[900],
+                    size: 40,
+                  )),
+                  Tab(
+                      icon: Icon(
+                    MyFlutterApp.tv_screen,
+                    color: Colors.indigo[900],
+                    size: 40,
+                  )),
+                  Tab(
+                      icon: Icon(
+                    MyFlutterApp.toaster,
+                    color: Colors.indigo[900],
+                    size: 30,
+                  )),
+                ],
+              ),
+              title: Expanded(
+                child: Center(
+                  child: Image.asset(
+                    "assets/seckinticaret.png",
+                    cacheHeight: 250,
+                    cacheWidth: 250,
+                  ),
+                ),
               ),
             ),
-          ),
-          body: TabBarView(
-            children: [
-              BuzdolabiPage(),
-              CamasirPage(),
-              BulasikPage(),
-              TvPage(),
-              KucukEvAletPage(),
-            ],
+            body: TabBarView(
+              children: [
+                BuzdolabiPage(),
+                CamasirPage(),
+                BulasikPage(),
+                TvPage(),
+                KucukEvAletPage(),
+              ],
+            ),
           ),
         ),
       ),
