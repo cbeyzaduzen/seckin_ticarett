@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "613646794879",
-    "project_id": "seckin-ticaret",
-    "storage_bucket": "seckin-ticaret.appspot.com"
+    "project_number": "737646170844",
+    "project_id": "seckin-ticaret-ae716",
+    "storage_bucket": "seckin-ticaret-ae716.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:613646794879:android:b407725dabb6ff81fb3f4a",
+        "mobilesdk_app_id": "1:737646170844:android:3b628d798e53db687a9a19",
         "android_client_info": {
           "package_name": "com.example.seckin_ticarett"
         }
       },
       "oauth_client": [
         {
-          "client_id": "613646794879-881q2mn47lu0h8pqpdlo0hq7jln2jhhr.apps.googleusercontent.com",
+          "client_id": "737646170844-7udnp62ceehaokv7aip5nosrh28p9od3.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyASAC4xOj1h1So48D9oz5CTR7o8A-gW4FQ"
+          "current_key": "AIzaSyBAyDk8IR0qJg-0tOPFN-FTRRwyIjQ_eGc"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "613646794879-881q2mn47lu0h8pqpdlo0hq7jln2jhhr.apps.googleusercontent.com",
+              "client_id": "737646170844-7udnp62ceehaokv7aip5nosrh28p9od3.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

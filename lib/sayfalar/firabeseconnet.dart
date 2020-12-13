@@ -11,7 +11,8 @@ class _ProfilePageState extends State<ProfilePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: StreamBuilder<QuerySnapshot>(
-          stream: FirebaseFirestore.instance.collection("Oyun").snapshots(),
+          stream:
+              FirebaseFirestore.instance.collection("Buzdolabi").snapshots(),
           builder: (context, snapshot) {
             return !snapshot.hasData
                 ? Text('PLease Wait')
@@ -29,7 +30,7 @@ class _ProfilePageState extends State<ProfilePage> {
   //burada veritabanında haberleri alıyoruz
 
   void getHaber() {
-    FirebaseFirestore.instance.collection("Oyun").get().then((value) {
+    FirebaseFirestore.instance.collection("Buzdolabi").get().then((value) {
       for (var i = 0; i < value.docs.length; i++) {
         print(value.docs[i]["baslik"]);
       }
