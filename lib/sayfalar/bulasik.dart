@@ -54,18 +54,25 @@ class _BulasikPageState extends State<BulasikPage> {
                                       ),
                                     ),
                                     Text(products["fiyat"]),
-                                    RaisedButton(
-                                      onPressed: () {
-                                        Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                              builder: (context) =>
-                                                  DetayPage()),
-                                        );
-                                      },
-                                      child: const Text(
-                                        'OZELLIKLER',
-                                        style: TextStyle(fontSize: 10),
+                                    Padding(
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: SizedBox(
+                                        height: 25,
+                                        width: 100,
+                                        child: RaisedButton(
+                                          onPressed: () {
+                                            Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      DetayPage()),
+                                            );
+                                          },
+                                          child: const Text(
+                                            'OZELLIKLER',
+                                            style: TextStyle(fontSize: 10),
+                                          ),
+                                        ),
                                       ),
                                     ),
                                   ],

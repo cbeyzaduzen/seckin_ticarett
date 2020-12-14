@@ -15,24 +15,24 @@ class _DetayPageState extends State<DetayPage> {
       body: SafeArea(
         child: Container(
           child: StreamBuilder<QuerySnapshot>(
-              stream:
-                  FirebaseFirestore.instance.collection("Detay").snapshots(),
-              builder: (context, snapshot) {
-                return !snapshot.hasData
-                    //loading page is here
-                    ? Scaffold(
-                        backgroundColor: Colors.amber,
-                        body: Container(
-                          child: LoadingFlipping.circle(
-                            borderColor: Colors.white,
-                            borderSize: 3.0,
-                            size: 75.0,
-                            backgroundColor: Colors.orange,
-                            duration: Duration(milliseconds: 500),
-                          ),
+            stream: FirebaseFirestore.instance.collection("Detay").snapshots(),
+            builder: (context, snapshot) {
+              return !snapshot.hasData
+                  //loading page is here
+                  ? Scaffold(
+                      backgroundColor: Colors.amber,
+                      body: Container(
+                        child: LoadingFlipping.circle(
+                          borderColor: Colors.white,
+                          borderSize: 3.0,
+                          size: 75.0,
+                          backgroundColor: Colors.orange,
+                          duration: Duration(milliseconds: 500),
                         ),
-                      )
-                    : Scaffold(
+                      ),
+                    )
+                  : Center(
+                      child: Scaffold(
                         body: Container(
                           child: Column(
                             children: [
@@ -51,16 +51,20 @@ class _DetayPageState extends State<DetayPage> {
                                 ),
                               ),
                               Container(
-                                child: Image.asset("assets/buz.jpg"),
+                                child: Image.network(
+                                    snapshot.data.docs[0]["foto"]),
                               ),
                               Expanded(
-                                  child:
-                                      Text("wdhlfjkerhcflehkcklçvjrvrhjkev")),
+                                child: Text(
+                                    snapshot.data.docs[0]["icerik"].toString()),
+                              ),
                             ],
                           ),
                         ),
-                      );
-              }),
+                      ),
+                    );
+            },
+          ),
         ),
       ),
     );

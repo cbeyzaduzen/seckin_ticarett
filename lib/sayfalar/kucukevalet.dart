@@ -55,18 +55,25 @@ class _KucukevaletPageState extends State<KucukevaletPage> {
                                       ),
                                     ),
                                     Text(products["fiyat"]),
-                                    RaisedButton(
-                                      onPressed: () {
-                                        Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                              builder: (context) =>
-                                                  DetayPage()),
-                                        );
-                                      },
-                                      child: const Text(
-                                        'OZELLIKLER',
-                                        style: TextStyle(fontSize: 10),
+                                    Padding(
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: SizedBox(
+                                        height: 25,
+                                        width: 100,
+                                        child: RaisedButton(
+                                          onPressed: () {
+                                            Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      DetayPage()),
+                                            );
+                                          },
+                                          child: const Text(
+                                            'OZELLIKLER',
+                                            style: TextStyle(fontSize: 10),
+                                          ),
+                                        ),
                                       ),
                                     ),
                                   ],
