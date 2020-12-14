@@ -2,7 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:loading_animations/loading_animations.dart';
 
-import 'detay.dart';
+import 'detaylar/kucukevaletdetay.dart';
 
 class KucukevaletPage extends StatefulWidget {
   @override
@@ -54,7 +54,6 @@ class _KucukevaletPageState extends State<KucukevaletPage> {
                                         fit: BoxFit.cover,
                                       ),
                                     ),
-                                    Text(products["fiyat"]),
                                     Padding(
                                       padding: const EdgeInsets.all(8.0),
                                       child: SizedBox(
@@ -66,7 +65,8 @@ class _KucukevaletPageState extends State<KucukevaletPage> {
                                               context,
                                               MaterialPageRoute(
                                                   builder: (context) =>
-                                                      DetayPage()),
+                                                      KucukEvAletDetayPage(
+                                                          index: index)),
                                             );
                                           },
                                           child: const Text(

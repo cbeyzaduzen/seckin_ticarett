@@ -4,7 +4,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:loading_animations/loading_animations.dart';
 
-import 'detay.dart';
+import 'detaylar/camasirdetay.dart';
 
 class CamasirPage extends StatefulWidget {
   @override
@@ -43,6 +43,7 @@ class _CamasirPageState extends State<CamasirPage> {
                       itemBuilder: (context, index) {
                         DocumentSnapshot products = snapshot.data.docs[index];
                         {
+                          print("1234 " + index.toString());
                           return Container(
                             margin: const EdgeInsets.all(8),
                             child: Card(
@@ -59,7 +60,7 @@ class _CamasirPageState extends State<CamasirPage> {
                                     ),
                                   ),
                                   Text(
-                                    products["fiyat"],
+                                    products["fiyat"] + " ₺",
                                     style: TextStyle(
                                         backgroundColor: Colors.red[100],
                                         fontSize: 15),
@@ -71,11 +72,14 @@ class _CamasirPageState extends State<CamasirPage> {
                                       width: 100,
                                       child: RaisedButton(
                                         onPressed: () {
+                                          print("12348569" + products.id);
                                           Navigator.push(
                                             context,
                                             MaterialPageRoute(
-                                                builder: (context) =>
-                                                    DetayPage()),
+                                              builder: (context) =>
+                                                  CamasirDetayPage(
+                                                      index: index),
+                                            ),
                                           );
                                         },
                                         child: const Text(

@@ -2,7 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:loading_animations/loading_animations.dart';
 
-import 'detay.dart';
+import 'detaylar/buzdolabidetay.dart';
 
 class BuzdolabiPage extends StatefulWidget {
   @override
@@ -13,7 +13,7 @@ class _BuzdolabiPageState extends State<BuzdolabiPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.yellow[100],
+      backgroundColor: Colors.grey[200],
       body: SafeArea(
         child: Container(
           child: StreamBuilder<QuerySnapshot>(
@@ -54,7 +54,7 @@ class _BuzdolabiPageState extends State<BuzdolabiPage> {
                                         fit: BoxFit.cover,
                                       ),
                                     ),
-                                    Text(products["fiyat"]),
+                                    Text(products["fiyat"] + " ₺"),
                                     Padding(
                                       padding: const EdgeInsets.all(8.0),
                                       child: SizedBox(
@@ -66,7 +66,8 @@ class _BuzdolabiPageState extends State<BuzdolabiPage> {
                                               context,
                                               MaterialPageRoute(
                                                   builder: (context) =>
-                                                      DetayPage()),
+                                                      BuzdolabiDetayPage(
+                                                          index: index)),
                                             );
                                           },
                                           child: const Text(
@@ -82,9 +83,9 @@ class _BuzdolabiPageState extends State<BuzdolabiPage> {
                               decoration: new BoxDecoration(
                                 boxShadow: [
                                   new BoxShadow(
-                                    color: Colors.blueGrey[200],
-                                    blurRadius: 5.0,
-                                  ),
+                                      color: Colors.grey,
+                                      offset: Offset(0, 10),
+                                      blurRadius: 10),
                                 ],
                               ),
                             );

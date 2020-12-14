@@ -1,13 +1,16 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:loading_animations/loading_animations.dart';
 
-class DetayPage extends StatefulWidget {
+class BulasikDetayPage extends StatefulWidget {
+  final int index;
+  BulasikDetayPage({this.index});
   @override
-  _DetayPageState createState() => _DetayPageState();
+  _BulasikDetayPageState createState() => _BulasikDetayPageState();
 }
 
-class _DetayPageState extends State<DetayPage> {
+class _BulasikDetayPageState extends State<BulasikDetayPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -15,8 +18,11 @@ class _DetayPageState extends State<DetayPage> {
       body: SafeArea(
         child: Container(
           child: StreamBuilder<QuerySnapshot>(
-            stream: FirebaseFirestore.instance.collection("Detay").snapshots(),
+            stream: FirebaseFirestore.instance
+                .collection("BulasikDetay")
+                .snapshots(),
             builder: (context, snapshot) {
+              print("deneme 1234 " + widget.index.toString());
               return !snapshot.hasData
                   //loading page is here
                   ? Scaffold(
@@ -37,27 +43,22 @@ class _DetayPageState extends State<DetayPage> {
                           child: Column(
                             children: [
                               Center(
-                                child: Expanded(
-                                  child: Text(
-                                    "ÖZELLİKLER",
-                                    style: TextStyle(
-                                      fontSize: 40,
-                                      foreground: Paint()
-                                        ..style = PaintingStyle.stroke
-                                        ..strokeWidth = 6
-                                        ..color = Colors.yellow[700],
-                                    ),
+                                child: Text(
+                                  "ÖZELLİKLER",
+                                  style: TextStyle(
+                                    fontSize: 40,
+                                    foreground: Paint()
+                                      ..style = PaintingStyle.stroke
+                                      ..strokeWidth = 6
+                                      ..color = Colors.yellow[700],
                                   ),
                                 ),
                               ),
                               Container(
                                 child: Image.network(
-                                    snapshot.data.docs[0]["foto"]),
+                                    snapshot.data.docs[widget.index]["foto"]),
                               ),
-                              Expanded(
-                                child: Text(
-                                    snapshot.data.docs[0]["icerik"].toString()),
-                              ),
+                              Text(snapshot.data.docs[widget.index]["icerik"]),
                             ],
                           ),
                         ),

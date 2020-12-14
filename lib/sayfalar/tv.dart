@@ -2,7 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:loading_animations/loading_animations.dart';
 
-import 'detay.dart';
+import 'detaylar/tvdetay.dart';
 
 class TvPage extends StatefulWidget {
   @override
@@ -28,14 +28,14 @@ class _TvPageState extends State<TvPage> {
                             borderColor: Colors.white,
                             borderSize: 3.0,
                             size: 75.0,
-                            backgroundColor: Colors.orange,
+                            backgroundColor: Colors.yellow[100],
                             duration: Duration(milliseconds: 500),
                           ),
                         ),
                       )
                     : GridView.builder(
                         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                            crossAxisCount: 2),
+                            crossAxisCount: 1),
                         itemCount: snapshot.data.docs.length,
                         itemBuilder: (context, index) {
                           DocumentSnapshot products = snapshot.data.docs[index];
@@ -52,7 +52,7 @@ class _TvPageState extends State<TvPage> {
                                         fit: BoxFit.cover,
                                       ),
                                     ),
-                                    Text(products["fiyat"]),
+                                    Text(products["fiyat"].toString() + " ₺"),
                                     Padding(
                                       padding: const EdgeInsets.all(8.0),
                                       child: SizedBox(
@@ -64,7 +64,8 @@ class _TvPageState extends State<TvPage> {
                                               context,
                                               MaterialPageRoute(
                                                   builder: (context) =>
-                                                      DetayPage()),
+                                                      TvDetayPage(
+                                                          index: index)),
                                             );
                                           },
                                           child: const Text(

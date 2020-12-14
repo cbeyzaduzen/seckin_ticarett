@@ -2,7 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:loading_animations/loading_animations.dart';
 
-import 'detay.dart';
+import 'detaylar/bulasikdetay.dart';
 
 class BulasikPage extends StatefulWidget {
   @override
@@ -21,7 +21,6 @@ class _BulasikPageState extends State<BulasikPage> {
                   FirebaseFirestore.instance.collection("Bulasik").snapshots(),
               builder: (context, snapshot) {
                 return !snapshot.hasData
-                    //loading page is here
                     ? Scaffold(
                         backgroundColor: Colors.amber,
                         body: Container(
@@ -65,7 +64,8 @@ class _BulasikPageState extends State<BulasikPage> {
                                               context,
                                               MaterialPageRoute(
                                                   builder: (context) =>
-                                                      DetayPage()),
+                                                      BulasikDetayPage(
+                                                          index: index)),
                                             );
                                           },
                                           child: const Text(
