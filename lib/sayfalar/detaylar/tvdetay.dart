@@ -54,7 +54,9 @@ class _TvDetayPageState extends State<TvDetayPage> {
                                       snapshot.data.docs[widget.index]["foto"]),
                                 ),
                                 Text(snapshot.data.docs[widget.index]["icerik"],
-                                    style: TextStyle(fontSize: 18,)),
+                                    style: TextStyle(
+                                      fontSize: 18,
+                                    )),
                               ],
                             ),
                           ),
