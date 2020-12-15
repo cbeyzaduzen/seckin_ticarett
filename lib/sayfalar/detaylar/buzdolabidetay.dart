@@ -26,7 +26,7 @@ class _BuzdolabiDetayPageState extends State<BuzdolabiDetayPage> {
               return !snapshot.hasData
                   //loading page is here
                   ? Scaffold(
-                      backgroundColor: Colors.white,
+                      backgroundColor: Colors.white10,
                       body: Container(
                         child: LoadingFlipping.circle(
                           borderColor: Colors.white,
