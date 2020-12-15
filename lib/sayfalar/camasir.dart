@@ -15,7 +15,7 @@ class _CamasirPageState extends State<CamasirPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.yellow[100],
+      backgroundColor: Colors.grey[200],
       body: SafeArea(
         child: Container(
           child: StreamBuilder<QuerySnapshot>(
@@ -43,7 +43,6 @@ class _CamasirPageState extends State<CamasirPage> {
                       itemBuilder: (context, index) {
                         DocumentSnapshot products = snapshot.data.docs[index];
                         {
-                          print("1234 " + index.toString());
                           return Container(
                             margin: const EdgeInsets.all(8),
                             child: Card(
@@ -51,7 +50,9 @@ class _CamasirPageState extends State<CamasirPage> {
                                 children: [
                                   Text(
                                     products["baslik"],
-                                    style: TextStyle(fontSize: 15),
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 20),
                                   ),
                                   Expanded(
                                     child: Image.network(
@@ -59,17 +60,11 @@ class _CamasirPageState extends State<CamasirPage> {
                                       fit: BoxFit.cover,
                                     ),
                                   ),
-                                  Text(
-                                    products["fiyat"] + " ₺",
-                                    style: TextStyle(
-                                        backgroundColor: Colors.red[100],
-                                        fontSize: 15),
-                                  ),
                                   Padding(
                                     padding: const EdgeInsets.all(8.0),
                                     child: SizedBox(
                                       height: 25,
-                                      width: 100,
+                                      width: 110,
                                       child: RaisedButton(
                                         onPressed: () {
                                           print("12348569" + products.id);
@@ -83,8 +78,10 @@ class _CamasirPageState extends State<CamasirPage> {
                                           );
                                         },
                                         child: const Text(
-                                          'OZELLIKLER',
-                                          style: TextStyle(fontSize: 10),
+                                          'ÖZELLİKLER',
+                                          style: TextStyle(
+                                              fontSize: 12,
+                                              fontWeight: FontWeight.bold),
                                         ),
                                       ),
                                     ),
@@ -94,10 +91,10 @@ class _CamasirPageState extends State<CamasirPage> {
                             ),
                             decoration: BoxDecoration(
                               boxShadow: [
-                                BoxShadow(
-                                  color: Colors.blueGrey[200],
-                                  blurRadius: 5.0,
-                                ),
+                                new BoxShadow(
+                                    color: Colors.grey,
+                                    offset: Offset(0, 10),
+                                    blurRadius: 10),
                               ],
                             ),
                           );

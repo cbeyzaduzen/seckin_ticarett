@@ -40,26 +40,25 @@ class _CamasirDetayPageState extends State<CamasirDetayPage> {
                   : Center(
                       child: Scaffold(
                         body: Container(
-                          child: Column(
-                            children: [
-                              Center(
-                                child: Text(
-                                  "ÖZELLİKLER",
-                                  style: TextStyle(
-                                    fontSize: 40,
-                                    foreground: Paint()
-                                      ..style = PaintingStyle.stroke
-                                      ..strokeWidth = 6
-                                      ..color = Colors.yellow[700],
+                          child: SingleChildScrollView(
+                            child: Column(
+                              children: [
+                                Center(
+                                  child: Text(
+                                    snapshot.data.docs[widget.index]["baslik"],
+                                    style: TextStyle(
+                                        fontSize: 30,
+                                        fontWeight: FontWeight.bold),
                                   ),
                                 ),
-                              ),
-                              Container(
-                                child: Image.network(
-                                    snapshot.data.docs[widget.index]["foto"]),
-                              ),
-                              Text(snapshot.data.docs[widget.index]["icerik"]),
-                            ],
+                                Container(
+                                  child: Image.network(
+                                      snapshot.data.docs[widget.index]["foto"]),
+                                ),
+                                Text(snapshot.data.docs[widget.index]["icerik"],
+                                    style: TextStyle(fontSize: 18)),
+                              ],
+                            ),
                           ),
                         ),
                       ),

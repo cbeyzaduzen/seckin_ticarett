@@ -47,19 +47,23 @@ class _BuzdolabiPageState extends State<BuzdolabiPage> {
                               child: Card(
                                 child: Column(
                                   children: [
-                                    Text(products["baslik"]),
+                                    Text(
+                                      products["baslik"],
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 18),
+                                    ),
                                     Expanded(
                                       child: Image.network(
                                         products["foto"],
                                         fit: BoxFit.cover,
                                       ),
                                     ),
-                                    Text(products["fiyat"] + " ₺"),
                                     Padding(
                                       padding: const EdgeInsets.all(8.0),
                                       child: SizedBox(
                                         height: 25,
-                                        width: 100,
+                                        width: 110,
                                         child: RaisedButton(
                                           onPressed: () {
                                             Navigator.push(
@@ -71,8 +75,10 @@ class _BuzdolabiPageState extends State<BuzdolabiPage> {
                                             );
                                           },
                                           child: const Text(
-                                            'OZELLIKLER',
-                                            style: TextStyle(fontSize: 10),
+                                            'ÖZELLİKLER',
+                                            style: TextStyle(
+                                                fontSize: 12,
+                                                fontWeight: FontWeight.bold),
                                           ),
                                         ),
                                       ),

@@ -13,7 +13,7 @@ class _KucukevaletPageState extends State<KucukevaletPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.yellow[100],
+      backgroundColor: Colors.grey[200],
       body: SafeArea(
         child: Container(
           child: StreamBuilder<QuerySnapshot>(
@@ -47,7 +47,12 @@ class _KucukevaletPageState extends State<KucukevaletPage> {
                               child: Card(
                                 child: Column(
                                   children: [
-                                    Text(products["baslik"]),
+                                    Text(
+                                      products["baslik"],
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 20),
+                                    ),
                                     Expanded(
                                       child: Image.network(
                                         products["foto"],
@@ -58,7 +63,7 @@ class _KucukevaletPageState extends State<KucukevaletPage> {
                                       padding: const EdgeInsets.all(8.0),
                                       child: SizedBox(
                                         height: 25,
-                                        width: 100,
+                                        width: 110,
                                         child: RaisedButton(
                                           onPressed: () {
                                             Navigator.push(
@@ -70,8 +75,10 @@ class _KucukevaletPageState extends State<KucukevaletPage> {
                                             );
                                           },
                                           child: const Text(
-                                            'OZELLIKLER',
-                                            style: TextStyle(fontSize: 10),
+                                            'ÖZELLİKLER',
+                                            style: TextStyle(
+                                                fontSize: 12,
+                                                fontWeight: FontWeight.bold),
                                           ),
                                         ),
                                       ),
@@ -82,9 +89,9 @@ class _KucukevaletPageState extends State<KucukevaletPage> {
                               decoration: new BoxDecoration(
                                 boxShadow: [
                                   new BoxShadow(
-                                    color: Colors.blueGrey[200],
-                                    blurRadius: 5.0,
-                                  ),
+                                      color: Colors.grey,
+                                      offset: Offset(0, 10),
+                                      blurRadius: 10),
                                 ],
                               ),
                             );
