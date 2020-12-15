@@ -28,7 +28,7 @@ class _TvPageState extends State<TvPage> {
                             borderColor: Colors.white,
                             borderSize: 3.0,
                             size: 75.0,
-                            backgroundColor: Colors.yellow[100],
+                            backgroundColor: Colors.white,
                             duration: Duration(milliseconds: 500),
                           ),
                         ),

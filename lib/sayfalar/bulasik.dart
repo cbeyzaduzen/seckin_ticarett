@@ -22,13 +22,13 @@ class _BulasikPageState extends State<BulasikPage> {
               builder: (context, snapshot) {
                 return !snapshot.hasData
                     ? Scaffold(
-                        backgroundColor: Colors.amber,
+                        backgroundColor: Colors.white,
                         body: Container(
                           child: LoadingFlipping.circle(
                             borderColor: Colors.white,
                             borderSize: 3.0,
                             size: 75.0,
-                            backgroundColor: Colors.orange,
+                            backgroundColor: Colors.white,
                             duration: Duration(milliseconds: 500),
                           ),
                         ),

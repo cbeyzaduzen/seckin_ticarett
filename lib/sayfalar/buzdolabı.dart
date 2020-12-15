@@ -30,7 +30,7 @@ class _BuzdolabiPageState extends State<BuzdolabiPage> {
                             borderColor: Colors.white,
                             borderSize: 3.0,
                             size: 75.0,
-                            backgroundColor: Colors.orange,
+                            backgroundColor: Colors.white,
                             duration: Duration(milliseconds: 500),
                           ),
                         ),

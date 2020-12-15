@@ -25,13 +25,13 @@ class _CamasirPageState extends State<CamasirPage> {
               return !snapshot.hasData
                   //loading page is here
                   ? Scaffold(
-                      backgroundColor: Colors.amber,
+                      backgroundColor: Colors.white,
                       body: Container(
                         child: LoadingFlipping.circle(
                           borderColor: Colors.white,
                           borderSize: 3.0,
                           size: 75.0,
-                          backgroundColor: Colors.orange,
+                          backgroundColor: Colors.white,
                           duration: Duration(milliseconds: 500),
                         ),
                       ),
