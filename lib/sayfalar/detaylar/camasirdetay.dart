@@ -14,7 +14,7 @@ class _CamasirDetayPageState extends State<CamasirDetayPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.amber,
+      backgroundColor: Colors.white,
       body: SafeArea(
         child: Container(
           child: StreamBuilder<QuerySnapshot>(
@@ -26,13 +26,13 @@ class _CamasirDetayPageState extends State<CamasirDetayPage> {
               return !snapshot.hasData
                   //loading page is here
                   ? Scaffold(
-                      backgroundColor: Colors.amber,
+                      backgroundColor: Colors.white,
                       body: Container(
                         child: LoadingFlipping.circle(
                           borderColor: Colors.white,
                           borderSize: 3.0,
                           size: 75.0,
-                          backgroundColor: Colors.orange,
+                          backgroundColor: Colors.white,
                           duration: Duration(milliseconds: 500),
                         ),
                       ),
