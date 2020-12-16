@@ -1,4 +1,4 @@
-package com.example.seckin_ticarett
+package com.uygulama.seckin_ticarett
 
 import io.flutter.embedding.android.FlutterActivity
 
