@@ -20,7 +20,7 @@ class _TvDetayPageState extends State<TvDetayPage> {
             stream:
                 FirebaseFirestore.instance.collection("TvDetay").snapshots(),
             builder: (context, snapshot) {
-              print("deneme 1234 " + widget.index.toString());
+              //print("deneme 1234 " + widget.index.toString());
               return !snapshot.hasData
                   //loading page is here
                   ? Scaffold(

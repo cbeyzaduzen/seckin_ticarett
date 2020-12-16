@@ -22,7 +22,7 @@ class _CamasirDetayPageState extends State<CamasirDetayPage> {
                 .collection("CamasirDetay")
                 .snapshots(),
             builder: (context, snapshot) {
-              print("deneme 1234 " + widget.index.toString());
+              // print("deneme 1234 " + widget.index.toString());
               return !snapshot.hasData
                   //loading page is here
                   ? Scaffold(

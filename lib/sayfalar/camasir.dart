@@ -67,7 +67,6 @@ class _CamasirPageState extends State<CamasirPage> {
                                       width: 110,
                                       child: RaisedButton(
                                         onPressed: () {
-                                          print("12348569" + products.id);
                                           Navigator.push(
                                             context,
                                             MaterialPageRoute(
