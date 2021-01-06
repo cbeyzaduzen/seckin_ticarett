@@ -61,10 +61,14 @@ class MyApp extends StatelessWidget {
               ),
               title: Expanded(
                 child: Center(
-                  child: Image.asset(
-                    "assets/seckinticaret.png",
-                    cacheHeight: 250,
-                    cacheWidth: 250,
+                  child: Text(
+                    "Seçkin Ticaret",
+                    textAlign: TextAlign.center,
+                    overflow: TextOverflow.ellipsis,
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black,
+                        fontSize: 30.0),
                   ),
                 ),
               ),
