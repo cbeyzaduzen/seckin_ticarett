@@ -23,7 +23,6 @@ class _CamasirPageState extends State<CamasirPage> {
                 FirebaseFirestore.instance.collection("Camasir").snapshots(),
             builder: (context, snapshot) {
               return !snapshot.hasData
-                  //loading page is here
                   ? Scaffold(
                       backgroundColor: Colors.white,
                       body: Container(
